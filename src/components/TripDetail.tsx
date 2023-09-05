@@ -54,3 +54,4 @@ function TripDetail() {
 export default TripDetail;
 
 
+console.log(2);
