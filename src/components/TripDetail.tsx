@@ -44,14 +44,15 @@ function TripDetail() {
             <p>{trip.activities}</p>
             <img src={trip.image} alt="" style={{ width: '250px', height: '250px' }} />
 
-            <Link to="/NewTripForm">
-              <button>New trip </button>
-            </Link>
-
           </div>
         </div>
       )}
       <footer>
+      <Link to="/UpdateTripForm">
+              <button>Update Trip </button>
+            </Link>
+
+
         <Link to="/">
           <button>Home</button>
         </Link></footer>
