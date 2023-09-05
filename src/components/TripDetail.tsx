@@ -55,4 +55,3 @@ export default TripDetail;
 
 
 console.log(2);
-console.log(2);
