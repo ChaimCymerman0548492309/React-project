@@ -45,17 +45,15 @@ console.log(ary);
                     <img src={item.image} alt="" style={{ width: '180px', height: '180px' }} />
                   </div>
                 </div>
+                <button>delete trip</button>
+
             </Link>
-            <button>delete trip</button>
 
           </>
         )
       })}
       <Link to="/">
         <button>Home</button>
-      </Link>
-      <Link to="/NewTripForm">
-        <button>New trip </button>  
       </Link>
     </div>
   );

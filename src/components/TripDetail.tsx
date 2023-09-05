@@ -31,7 +31,7 @@ function TripDetail() {
 
   useEffect(() => {
     doApi();
-  }, []); 
+  }, []);
 
   return (
     <div>
@@ -41,13 +41,20 @@ function TripDetail() {
             <p>{trip.name}</p>
             <p>{trip.destination}</p>
             <p>{trip.price}</p>
-            <img src={trip.image} alt="" style={{ width: '180px', height: '180px' }} />
+            <p>{trip.activities}</p>
+            <img src={trip.image} alt="" style={{ width: '250px', height: '250px' }} />
+
+            <Link to="/NewTripForm">
+              <button>New trip </button>
+            </Link>
+
           </div>
         </div>
       )}
-      <Link to="/">
-        <button>Home</button>
-      </Link>
+      <footer>
+        <Link to="/">
+          <button>Home</button>
+        </Link></footer>
     </div>
   );
 }
