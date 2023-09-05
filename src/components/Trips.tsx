@@ -28,6 +28,7 @@ function Trips() {
     doapi()
 
   }, [])
+console.log(ary);
 
   return (
     <div >
@@ -35,7 +36,7 @@ function Trips() {
         return (
           <>
           
-            <Link to="/TripDetail">
+            <Link to={`/TripDetail/${item.id}`}>
                 <div key={item.id}>
                   <div style={{ border: 'solid ', borderRadius: '15px' }}>
                     <p>{item.name}</p>
@@ -56,9 +57,6 @@ function Trips() {
       <Link to="/NewTripForm">
         <button>New trip </button>  
       </Link>
-      {/* <Link to="/TripDetail">
-        <button >One trip</button>
-      </Link> */}
     </div>
   );
 }
