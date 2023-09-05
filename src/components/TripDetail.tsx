@@ -45,10 +45,12 @@ function TripDetail() {
         </div>
       ))}
       <Link to="/">
-        <button>Home</button>
+        <button>Home</button> 
       </Link>
     </div>
   );
 }
 
 export default TripDetail;
+
+
