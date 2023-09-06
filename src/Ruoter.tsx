@@ -7,6 +7,7 @@ import NewTripForm from './components/NewTripForm';
 import UpdateTripForm from './components/UpdateTripForm';
 import UserLogin from './components/UserLogin';
 import UserRegistration from './components/UserRegistration';
+// import Delete from './components/Delete';
 function Ruoter() {
     return (
         <div>
@@ -20,6 +21,7 @@ function Ruoter() {
                     <Route path="/UpdateTripForm" element={<UpdateTripForm />} />
                     <Route path="/UserLogin" element={<UserLogin />} />
                     <Route path="/UserRegistration" element={<UserRegistration />} />
+                    {/* <Route path="/Delete" element={<Delete />} /> */}
                 </Routes>
             </Router>
 

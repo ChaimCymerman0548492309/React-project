@@ -15,46 +15,56 @@ interface Trip {
 }
 
 function Trips() {
-  const [ary, setary] = useState([])
+  const [ary, setary] = useState<Trip[]>([]);
 
-  const doapi = async () => {
-    let url = "http://localhost:3000/api/trips"
-    let resp = await axios.get(url)
-    console.log(resp.data);
-    setary(resp.data)
+  const fetchTrips = async () => {
+    try {
+      const response = await axios.get<Trip[]>("http://localhost:3000/api/trips");
+      setary(response.data);
+    } catch (error) {
+      console.error("Error fetching trips:", error);
+    }
+  };
 
-  }
+  const handleDelete = async (tripId: string) => {
+    try {
+      await axios.delete(`http://localhost:3000/api/trips/${tripId}`, {
+        headers: {
+          authorization: 'test-token',
+        },
+      });
+
+      setary((prevTrips) => prevTrips.filter((trip) => trip.id !== tripId));
+    } catch (error) {
+      console.error("Error deleting trip:", error);
+    }
+  };
+
   useEffect(() => {
-    doapi()
-
-  }, [])
-console.log(ary);
+    fetchTrips();
+  }, []);
 
   return (
-    <div >
-      {ary.map((item: Trip) => {
-        return (
-          <>
-          
-            <Link to={`/TripDetail/${item.id}`}>
-                <div key={item.id}>
-                  <div style={{ border: 'solid ', borderRadius: '15px' }}>
-                    <p>{item.name}</p>
-                    <p>{item.destination}</p>
-                    <p>{item.price}</p>
-                    <img src={item.image} alt="" style={{ width: '180px', height: '180px' }} />
-                  </div>
-                </div>
-                <button>delete trip</button>
-
-            </Link>
-
-          </>
-        )
-      })}
-      <Link to="/">
-        <button>Home</button>
-      </Link>
+    <div style={{ justifyContent : 'space-between'}}>
+      {ary.map((item: Trip) => (
+        <div key={item.id}>
+          <Link to={`/TripDetail/${item.id}`}>
+            <div style={{ border: 'solid ', borderRadius: '15px' }}>
+              <p>{item.name}</p>
+              <p>{item.destination}</p>
+              <p>{item.price}</p>
+              <img src={item.image} alt="" style={{ width: '180px', height: '180px' }} />
+            </div>
+          </Link>
+          <button onClick={() => handleDelete(item.id)}>delete trip</button>
+        </div>
+      ))}
+      <button>
+        <Link to="/">Home</Link>
+      </button>
+      <button>
+        <Link to="/NewTripForm">New Trip Form</Link>
+      </button>
     </div>
   );
 }
