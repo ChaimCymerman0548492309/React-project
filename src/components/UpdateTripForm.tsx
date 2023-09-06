@@ -21,7 +21,6 @@ export default function EditTrip() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-console.log();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
