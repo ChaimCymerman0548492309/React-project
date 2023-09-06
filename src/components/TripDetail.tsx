@@ -48,11 +48,9 @@ function TripDetail() {
         </div>
       )}
       <footer>
-      <Link to="/UpdateTripForm">
+      <Link to={`/UpdateTripForm/${trip?.id}`}>
               <button>Update Trip </button>
             </Link>
-
-
         <Link to="/">
           <button>Home</button>
         </Link></footer>
