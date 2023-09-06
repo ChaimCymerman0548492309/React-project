@@ -35,7 +35,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             },
         });
         console.log("Trip updated:", response.data);
-        console.log("Trip updated:", response.data);
     } catch (error) {
         console.error("Error updating trip:", error);
     }
