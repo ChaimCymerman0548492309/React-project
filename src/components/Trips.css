@@ -1,0 +1,44 @@
+/* Trips.css */
+body{
+  display: flex - wrap;
+}
+/* דוגמה לעיצוב לקומפוננטת הטיולים */
+.trip-card {
+  border: solid 2px orange;  
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f4f4f4; /* רקע אפור */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* אפקט צל מעט */
+}
+
+.trip-card p {
+  margin: 10px 0;
+  font-size: 1.2rem; /* גודל טקסט גדול יותר */
+  color: #333; /* צבע טקסט כהה */
+}
+
+.trip-card img {
+  width: 280px; /* גודל תמונה גדול יותר */
+  height: 280px; /* גודל תמונה גדול יותר */
+  border-radius: 10px; /* תמונה עם פינות מעוגלות */
+}
+
+/* דוגמה לעיצוב לכפתור מחיקה */
+.delete-button {
+  background-color: #ff0000; /* צבע רקע אדום */
+  color: #fff; /* צבע טקסט לבן */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold; /* טקסט מודגש */
+}
+
+.delete-button:hover {
+  background-color: #cc0000; /* צבע רקע אדום כהה בהרחבה */
+}

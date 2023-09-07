@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './UserLogin.css'; // כאן ניתן לציין את הקובץ CSS
 
 function UserLogin() {
   const [email, setEmail] = useState('');
@@ -28,7 +29,7 @@ function UserLogin() {
   };
 
   return (
-    <div>
+    <div className="user-login"> {/* הוספתי את הקלאס שנתתי לו */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -46,7 +47,7 @@ function UserLogin() {
       </form>
 
       <Link to="/">
-        <button>Home</button>
+        <button className="link-button">Home</button> {/* הוספתי את הקלאס שנתתי לו */}
       </Link>
     </div>
   );

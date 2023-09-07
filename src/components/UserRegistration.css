@@ -1,0 +1,55 @@
+/* UserRegistration.css */
+
+.user-registration {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  .user-registration form {
+    margin-top: 20px;
+  }
+  
+  .user-registration form input[type="text"],
+  .user-registration form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #fff; /* רקע לבן */
+    color: #333; /* צבע טקסט כהה */
+  }
+  
+  .user-registration form button[type="submit"] {
+    display: block;
+    background-color: #0074d9; /* צבע כחול */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .user-registration form button[type="submit"]:hover {
+    background-color: #0056b3; /* צבע כחול כהה */
+  }
+  
+  .link-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .link-button a {
+    text-decoration: none;
+    color: #0074d9; /* צבע כחול לינקים */
+  }
+  
+  .link-button a:hover {
+    text-decoration: underline;
+  }
+  

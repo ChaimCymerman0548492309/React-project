@@ -1,0 +1,87 @@
+/* UpdateTrip.css */
+
+.update-trip {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  .update-trip h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    color: #0074d9; /* צבע כחול */
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group input[type="date"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #fff; /* רקע לבן */
+    color: #333;
+  }
+  
+  .form-group textarea {
+    height: 100px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    background-color: #ff5733; /* צבע כתום */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #e63900; /* צבע כתום כהה */
+  }
+  
+  button[type="button"] {
+    display: block;
+    background-color: #ffc300; /* צבע צהוב */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #ffac00; /* צבע צהוב בהיר */
+  }
+  
+  .link-button {
+    text-align: center;
+  }
+  
+  .link-button a {
+    text-decoration: none;
+    color: #0074d9; /* צבע כחול לינקים */
+  }
+  
+  .link-button a:hover {
+    text-decoration: underline;
+  }
+  

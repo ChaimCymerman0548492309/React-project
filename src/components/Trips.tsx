@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './Trips.css'; // קשר את קובץ ה-CSS
 
 interface Trip {
   name: string;
@@ -45,9 +46,9 @@ function Trips() {
   }, []);
 
   return (
-    <div style={{ justifyContent : 'space-between'}}>
+    <div className="trip-list">
       {ary.map((item: Trip) => (
-        <div key={item.id}>
+        <div className="trip-card" key={item.id}>
           <Link to={`/TripDetail/${item.id}`}>
             <div style={{ border: 'solid ', borderRadius: '15px' }}>
               <p>{item.name}</p>
@@ -56,7 +57,7 @@ function Trips() {
               <img src={item.image} alt="" style={{ width: '180px', height: '180px' }} />
             </div>
           </Link>
-          <button onClick={() => handleDelete(item.id)}>delete trip</button>
+          <button className="delete-button" onClick={() => handleDelete(item.id)}>delete trip</button>
         </div>
       ))}
       <button>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
 import axios from "axios";
+import './NewTripForm.css'; // משתמשים בעיצוב מקובץ ה-CSS
+
 function UpdateTrip() {
     const { id } = useParams();
     const [editedTrip, setEditedTrip] = useState({
@@ -26,24 +28,24 @@ function UpdateTrip() {
         const { name, value } = e.target;
         setEditedTrip({ ...editedTrip, [name]: value });
     };
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-        const response = await axios.put(`http://localhost:3000/api/trips/${id}`, editedTrip, {
-            headers: {
-                authorization: 'test-token'
-            },
-        });
-        console.log("Trip updated:", response.data);
-    } catch (error) {
-        console.error("Error updating trip:", error);
-    }
-};
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const response = await axios.put(`http://localhost:3000/api/trips/${id}`, editedTrip, {
+                headers: {
+                    authorization: 'test-token'
+                },
+            });
+            console.log("Trip updated:", response.data);
+        } catch (error) {
+            console.error("Error updating trip:", error);
+        }
+    };
     return (
-        <div>
+        <div className="update-trip"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
             <h2>Edit Trip</h2>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Name:</label>
                     <input
                         type="text"
@@ -53,7 +55,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Destination:</label>
                     <input
                         type="text"
@@ -63,7 +65,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Start Date:</label>
                     <input
                         type="date"
@@ -73,7 +75,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>End Date:</label>
                     <input
                         type="date"
@@ -83,7 +85,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Description:</label>
                     <textarea
                         name="description"
@@ -92,7 +94,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     ></textarea>
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Price:</label>
                     <input
                         type="number"
@@ -102,7 +104,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Image URL:</label>
                     <input
                         type="text"
@@ -112,7 +114,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group"> {/* השתמשנו בקלאס מקובץ ה-CSS */}
                     <label>Activities (comma-separated):</label>
                     <input
                         type="text"
@@ -122,17 +124,12 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                     />
                 </div>
-                <button type="submit">Update Trip</button>
+                <button type="submit" className="update-button">Update Trip</button> {/* השתמשנו בקלאס מקובץ ה-CSS */}
             </form>
             <Link to={`/Trips`}>
-                <button style={{ background: "yellow" }}>Back to Trip Details</button>
+                <button className="link-button">Back to Trip Details</button> {/* השתמשנו בקלאס מקובץ ה-CSS */}
             </Link>
         </div>
     )
 }
-export default UpdateTrip;
-
-
-
-
-
+export default UpdateTrip
